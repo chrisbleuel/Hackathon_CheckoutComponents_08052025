@@ -66,22 +66,20 @@ export const Stepper = () => {
   ];
   
   return (
-    <div className="flex w-full justify-center">
-      <div className="items-center flex w-full max-w-2xl">
-        <div className="w-full flex">
-          {steps.map((step, index) => (
-            <Step 
-              key={index}
-              label={step.label}
-              isCompleted={step.isCompleted}
-              isActive={step.isActive}
-              isLast={step.isLast}
-              isOrder={step.isOrder}
-              isDone={step.isDone}
-              isFirst={step.isFirst}
-            />
-          ))}
-        </div>
+    <div className="flex w-full">
+      <div className="flex w-full">
+        {steps.map((step, index) => (
+          <Step 
+            key={index}
+            label={step.label}
+            isCompleted={step.isCompleted}
+            isActive={step.isActive}
+            isLast={step.isLast}
+            isOrder={step.isOrder}
+            isDone={step.isDone}
+            isFirst={step.isFirst}
+          />
+        ))}
       </div>
     </div>
   );

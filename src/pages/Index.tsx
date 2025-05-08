@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -13,7 +14,9 @@ export default function Index() {
       <main className="w-full">
         <div className="bg-white w-full">
           <div className="px-4 py-8 max-w-[1440px] mx-auto">
-            <Stepper />
+            <div className="max-w-none w-full">
+              <Stepper />
+            </div>
             
             <div className="mt-8">
               <h1 className="text-[#32373E] text-[32px] font-bold leading-none tracking-[0.48px]">
