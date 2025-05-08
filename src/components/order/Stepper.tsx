@@ -9,9 +9,10 @@ interface StepProps {
   isLast?: boolean;
   isOrder?: boolean;
   isDone?: boolean;
+  isFirst?: boolean;
 }
 
-const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrder, isDone }) => {
+const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrder, isDone, isFirst }) => {
   return (
     <div className="flex flex-col items-center min-w-20 flex-1">
       <div className="flex items-center w-full">
