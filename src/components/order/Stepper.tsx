@@ -16,15 +16,15 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
   return (
     <div className="flex flex-col items-center relative">
       <div className="flex items-center w-full">
-        {/* Left connector line with 5px spacing */}
+        {/* Left connector line */}
         {!isFirst && (
-          <div className="flex-1 flex items-center">
-            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} mr-[5px]`} />
+          <div className="w-full h-0.5 absolute right-1/2 ml-[5px]" style={{ left: '-50%', width: 'calc(100% - 10px)' }}>
+            <div className={`h-full w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
           </div>
         )}
         
         {/* Circle icon */}
-        <div className="relative flex-shrink-0">
+        <div className="relative z-10">
           {isCompleted ? (
             <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
               <Check className="w-3.5 h-3.5 text-white" />
@@ -41,13 +41,6 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
             <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
           )}
         </div>
-        
-        {/* Right connector line with 5px spacing */}
-        {!isLast && (
-          <div className="flex-1 flex items-center">
-            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} ml-[5px]`} />
-          </div>
-        )}
       </div>
       
       {/* Step label - centered under the icon */}
