@@ -28,8 +28,8 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
         <div className="text-[#32373E] mt-1">{label}</div>
       </div>
       {!isLast && (
-        <div className="self-stretch min-w-20 flex-1 shrink basis-[0%] my-auto">
-          <div className={`flex shrink-0 h-0.5 ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+        <div className="self-stretch min-w-20 flex-1 shrink basis-[0%] my-auto relative">
+          <div className={`absolute top-[-5px] w-full h-0.5 ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
         </div>
       )}
     </div>
