@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Check } from 'lucide-react';
 
 interface StepProps {
   label: string;
@@ -32,35 +31,17 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast }) => 
 
 export const Stepper = () => {
   return (
-    <div className="flex w-full flex-col gap-4">
-      <div className="flex items-center justify-between w-full">
-        <Button 
-          variant="ghost" 
-          className="flex items-center text-[#606A76] hover:text-[#0072EF] hover:bg-transparent"
-        >
-          <ChevronLeft className="w-5 h-5 mr-1" />
-          Back
-        </Button>
-        
-        <div className="items-center flex w-full max-w-2xl mx-auto">
-          <div className="self-stretch min-w-60 w-full flex-1 shrink basis-[0%] my-auto">
-            <div className="flex w-full gap-0.5 flex-wrap">
-              <Step label="Account" isCompleted={true} isActive={false} />
-              <Step label="Address" isCompleted={true} isActive={false} />
-              <Step label="Prescription" isCompleted={true} isActive={false} />
-              <Step label="Order" isCompleted={false} isActive={true} />
-              <Step label="Done" isCompleted={false} isActive={false} isLast />
-            </div>
+    <div className="flex w-full justify-center">
+      <div className="items-center flex w-full max-w-2xl">
+        <div className="self-stretch min-w-60 w-full flex-1 shrink basis-[0%] my-auto">
+          <div className="flex w-full gap-0.5 flex-wrap">
+            <Step label="Account" isCompleted={true} isActive={false} />
+            <Step label="Address" isCompleted={true} isActive={false} />
+            <Step label="Prescription" isCompleted={true} isActive={false} />
+            <Step label="Order" isCompleted={false} isActive={true} />
+            <Step label="Done" isCompleted={false} isActive={false} isLast />
           </div>
         </div>
-        
-        <Button 
-          variant="ghost" 
-          className="flex items-center text-[#606A76] hover:text-[#0072EF] hover:bg-transparent"
-        >
-          Skip
-          <ChevronRight className="w-5 h-5 ml-1" />
-        </Button>
       </div>
     </div>
   );
