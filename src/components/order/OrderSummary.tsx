@@ -1,7 +1,10 @@
+
 import React from 'react';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
+
 const PaymentLogo = ({
   src,
   alt
@@ -11,8 +14,9 @@ const PaymentLogo = ({
 }) => <div className="justify-center items-center flex w-12 h-8 border border-[#E6EBF0] bg-white p-2 rounded-[3px]">
     <img src={src} alt={alt} className="object-contain max-w-full max-h-full" />
   </div>;
+  
 export const OrderSummary = () => {
-  return <div className="min-w-60 flex-1 shrink basis-[0%] px-[16px]">
+  return <div className="min-w-60 flex-1 shrink basis-[0%] md:px-[16px]">
       <div className="text-[#32373E] text-xl font-light leading-[1.4] tracking-[0.1px] py-[16px]">
         Summary
       </div>
