@@ -1,0 +1,45 @@
+import React from 'react';
+import { Check } from 'lucide-react';
+
+interface StepProps {
+  label: string;
+  isCompleted: boolean;
+  isActive: boolean;
+  isLast?: boolean;
+}
+
+const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast }) => {
+  return (
+    <div className="items-center flex min-w-60 gap-0.5 flex-1 shrink basis-[0%] pr-0.5">
+      <div className="self-stretch flex h-5 flex-col items-center text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
+        {isCompleted ? (
+          <Check className="w-5 h-5 text-[#0072EF]" />
+        ) : (
+          <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+        )}
+        <div className="text-[#32373E]">{label}</div>
+      </div>
+      {!isLast && (
+        <div className="self-stretch min-w-60 flex-1 shrink basis-[0%] my-auto">
+          <div className={`flex shrink-0 h-0.5 ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export const Stepper = () => {
+  return (
+    <div className="items-center flex w-full gap-2.5">
+      <div className="self-stretch min-w-60 h-[57px] w-full flex-1 shrink basis-[0%] gap-[72px] my-auto">
+        <div className="flex w-full gap-0.5 flex-wrap">
+          <Step label="Account" isCompleted={true} isActive={false} />
+          <Step label="Address" isCompleted={true} isActive={false} />
+          <Step label="Prescription" isCompleted={true} isActive={false} />
+          <Step label="Order" isCompleted={false} isActive={true} />
+          <Step label="Done" isCompleted={false} isActive={false} isLast />
+        </div>
+      </div>
+    </div>
+  );
+};
