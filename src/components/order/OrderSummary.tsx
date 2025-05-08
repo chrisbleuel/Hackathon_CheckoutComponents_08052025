@@ -1,19 +1,19 @@
-
 import React from 'react';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-
-const PaymentLogo = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="justify-center items-center flex w-12 h-8 border border-[#E6EBF0] bg-white p-2 rounded-[3px]">
+const PaymentLogo = ({
+  src,
+  alt
+}: {
+  src: string;
+  alt: string;
+}) => <div className="justify-center items-center flex w-12 h-8 border border-[#E6EBF0] bg-white p-2 rounded-[3px]">
     <img src={src} alt={alt} className="object-contain max-w-full max-h-full" />
-  </div>
-);
-
+  </div>;
 export const OrderSummary = () => {
-  return (
-    <div className="min-w-60 flex-1 shrink basis-[0%]">
-      <div className="text-[#32373E] text-xl font-light leading-[1.4] tracking-[0.1px]">
+  return <div className="min-w-60 flex-1 shrink basis-[0%]">
+      <div className="text-[#32373E] text-xl font-light leading-[1.4] tracking-[0.1px] py-[16px]">
         Summary
       </div>
 
@@ -61,13 +61,7 @@ export const OrderSummary = () => {
         </Button>
 
         <div className="flex flex-wrap gap-2 p-4">
-          {[
-            'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/c444b40892030bf5d2c291bb3005cd50b1a1a8ce?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1f4a9fce55e3bd8230055eeb388af75c4aa02ac4?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1acf50de2262ba43a20b97b28b61600684fb6c96?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1ba36fb09060a968da98da2f4d94f099478184ed?placeholderIfAbsent=true',
-            'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/e0b3a3bea88b56dbfd28ac1578078dd0f100a7a1?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/e31522e1ef42512cdaf1d2d7c8fe212a317e830b?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/e885512322492c1bc0a74ddc1502826795dafee9?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1c4272d330196603c803c40b4a19e954c6353899?placeholderIfAbsent=true',
-            'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/24860f7153971388f6c14cb48bf29e95f9e355ac?placeholderIfAbsent=true'
-          ].map((url, index) => (
-            <PaymentLogo key={index} src={url} alt={`Payment method ${index + 1}`} />
-          ))}
+          {['https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/c444b40892030bf5d2c291bb3005cd50b1a1a8ce?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1f4a9fce55e3bd8230055eeb388af75c4aa02ac4?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1acf50de2262ba43a20b97b28b61600684fb6c96?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1ba36fb09060a968da98da2f4d94f099478184ed?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/e0b3a3bea88b56dbfd28ac1578078dd0f100a7a1?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/e31522e1ef42512cdaf1d2d7c8fe212a317e830b?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/e885512322492c1bc0a74ddc1502826795dafee9?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/1c4272d330196603c803c40b4a19e954c6353899?placeholderIfAbsent=true', 'https://cdn.builder.io/api/v1/image/assets/473d424b1c61442992c0c3820764778e/24860f7153971388f6c14cb48bf29e95f9e355ac?placeholderIfAbsent=true'].map((url, index) => <PaymentLogo key={index} src={url} alt={`Payment method ${index + 1}`} />)}
         </div>
       </div>
 
@@ -80,7 +74,5 @@ export const OrderSummary = () => {
           </Button>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-

@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { Input } from '@/components/ui/Input';
-
 export const OrderDetails = () => {
-  return (
-    <div className="min-w-60 flex-1 shrink basis-[0%] rounded-lg">
+  return <div className="min-w-60 flex-1 shrink basis-[0%] rounded-lg">
       <div className="w-full">
-        <div className="text-[#32373E] text-xl font-light leading-[1.4] tracking-[0.1px]">
+        <div className="text-[#32373E] text-xl font-light leading-[1.4] tracking-[0.1px] py-[16px]">
           Sold by
         </div>
         <div className="text-[#07090D] text-base font-normal leading-6 tracking-[0.08px]">
@@ -106,7 +103,5 @@ export const OrderDetails = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
