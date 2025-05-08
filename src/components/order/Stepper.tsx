@@ -18,7 +18,7 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
       <div className="flex items-center w-full">
         {/* Left connector line */}
         {!isFirst && (
-          <div className="w-full h-0.5 absolute right-1/2 ml-[5px]" style={{ left: '-50%', width: 'calc(100% - 10px)' }}>
+          <div className="w-full h-0.5 absolute" style={{ right: '50%', marginRight: '5px', left: '-50%', marginLeft: '5px' }}>
             <div className={`h-full w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
           </div>
         )}
