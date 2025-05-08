@@ -50,8 +50,8 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
         )}
       </div>
       
-      {/* Step label */}
-      <div className="text-xs text-[#32373E] mt-1">{label}</div>
+      {/* Step label - centered under the dot */}
+      <div className="text-xs text-[#32373E] mt-1 text-center w-full">{label}</div>
     </div>
   );
 };
