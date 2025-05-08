@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, ShoppingBasket, Truck, CreditCard } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -26,8 +25,8 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
             <ShoppingBasket className="w-3 h-3 text-white" />
           </div>
         ) : (
-          <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} flex items-center justify-center`}>
-            {isActive && <Truck className="w-3 h-3 text-white" />}
+          <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#8E9196]' : 'bg-[#E6EBF0]'} flex items-center justify-center`}>
+            {isActive && <Truck className="w-3 h-3 text-white" strokeWidth={2} />}
           </div>
         )}
         <div className={`text-[#32373E] mt-1 ${isMobile ? 'text-[10px]' : ''}`}>{isMobile && label.length > 6 ? label.substring(0, 6) : label}</div>
