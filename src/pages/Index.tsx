@@ -4,15 +4,13 @@ import { Footer } from '@/components/layout/Footer';
 import { Stepper } from '@/components/order/Stepper';
 import { OrderDetails } from '@/components/order/OrderDetails';
 import { OrderSummary } from '@/components/order/OrderSummary';
-
 export default function Index() {
-  return (
-    <div className="bg-white">
+  return <div className="bg-white">
       <Header />
       
       <main className="w-full">
         <div className="bg-white w-full">
-          <div className="px-4 py-8 max-w-[1440px] mx-auto">
+          <div className="py-8 max-w-[1440px] mx-auto px-[32px]">
             <Stepper />
             
             <div className="mt-8">
@@ -30,6 +28,5 @@ export default function Index() {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 }
