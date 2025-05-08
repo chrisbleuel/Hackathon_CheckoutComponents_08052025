@@ -16,10 +16,10 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
   return (
     <div className="flex flex-col items-center">
       <div className="flex items-center w-full">
-        {/* Left connector line */}
+        {/* Left connector line with 5px spacing */}
         {!isFirst && (
-          <div className="flex-1">
-            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+          <div className="flex-1 flex items-center">
+            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} mr-[5px]`} />
           </div>
         )}
         
@@ -42,10 +42,10 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
           )}
         </div>
         
-        {/* Right connector line */}
+        {/* Right connector line with 5px spacing */}
         {!isLast && (
-          <div className="flex-1">
-            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+          <div className="flex-1 flex items-center">
+            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} ml-[5px]`} />
           </div>
         )}
       </div>
