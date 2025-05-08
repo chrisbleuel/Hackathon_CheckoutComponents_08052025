@@ -45,8 +45,8 @@ export const Stepper = () => {
   const isMobile = useIsMobile();
   
   return (
-    <div className="flex w-full justify-center">
-      <div className="items-center flex w-full max-w-2xl">
+    <div className="flex w-full justify-center px-4 max-w-[1440px] mx-auto">
+      <div className="items-center flex w-full">
         <div className="self-stretch w-full flex-1 shrink basis-[0%] my-auto">
           <div className="flex w-full gap-0.5 flex-wrap">
             <Step label="Account" isCompleted={true} isActive={false} />
