@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/Input';
 
 export const OrderDetails = () => {
   return (
@@ -43,12 +44,48 @@ export const OrderDetails = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4 mt-4">
-            <Input label="Sphere" value="+3.25" readOnly />
-            <Input label="Sphere" value="+3.25" readOnly />
-            <Input label="Cylinder" value="+3.25" readOnly />
-            <Input label="Cylinder" value="+3.25" readOnly />
-            <Input label="Axis" value="120°" readOnly />
-            <Input label="Axis" value="120°" readOnly />
+            <div className="w-full">
+              <div className="text-[#606A76] text-xs font-normal leading-[22px] tracking-[0.06px]">Sphere</div>
+              <input value="+3.25" readOnly className="text-[#32373E] text-base font-medium tracking-[0.08px] w-full bg-transparent outline-none" />
+              <div className="w-full gap-1">
+                <div className="bg-[rgba(194,205,214,1)] flex min-h-px w-full" />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="text-[#606A76] text-xs font-normal leading-[22px] tracking-[0.06px]">Sphere</div>
+              <input value="+3.25" readOnly className="text-[#32373E] text-base font-medium tracking-[0.08px] w-full bg-transparent outline-none" />
+              <div className="w-full gap-1">
+                <div className="bg-[rgba(194,205,214,1)] flex min-h-px w-full" />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="text-[#606A76] text-xs font-normal leading-[22px] tracking-[0.06px]">Cylinder</div>
+              <input value="+3.25" readOnly className="text-[#32373E] text-base font-medium tracking-[0.08px] w-full bg-transparent outline-none" />
+              <div className="w-full gap-1">
+                <div className="bg-[rgba(194,205,214,1)] flex min-h-px w-full" />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="text-[#606A76] text-xs font-normal leading-[22px] tracking-[0.06px]">Cylinder</div>
+              <input value="+3.25" readOnly className="text-[#32373E] text-base font-medium tracking-[0.08px] w-full bg-transparent outline-none" />
+              <div className="w-full gap-1">
+                <div className="bg-[rgba(194,205,214,1)] flex min-h-px w-full" />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="text-[#606A76] text-xs font-normal leading-[22px] tracking-[0.06px]">Axis</div>
+              <input value="120°" readOnly className="text-[#32373E] text-base font-medium tracking-[0.08px] w-full bg-transparent outline-none" />
+              <div className="w-full gap-1">
+                <div className="bg-[rgba(194,205,214,1)] flex min-h-px w-full" />
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="text-[#606A76] text-xs font-normal leading-[22px] tracking-[0.06px]">Axis</div>
+              <input value="120°" readOnly className="text-[#32373E] text-base font-medium tracking-[0.08px] w-full bg-transparent outline-none" />
+              <div className="w-full gap-1">
+                <div className="bg-[rgba(194,205,214,1)] flex min-h-px w-full" />
+              </div>
+            </div>
           </div>
 
           <div className="mt-8">
@@ -72,3 +109,4 @@ export const OrderDetails = () => {
     </div>
   );
 };
+
