@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, ShoppingBasket } from 'lucide-react';
+import { Check, ShoppingBasket, Truck } from 'lucide-react';
 
 interface StepProps {
   label: string;
@@ -23,7 +23,9 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
             <ShoppingBasket className="w-3 h-3 text-white" />
           </div>
         ) : (
-          <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+          <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} flex items-center justify-center`}>
+            {isActive && <Truck className="w-3 h-3 text-white" />}
+          </div>
         )}
         <div className="text-[#32373E] mt-1">{label}</div>
       </div>
