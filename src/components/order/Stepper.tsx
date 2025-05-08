@@ -16,7 +16,7 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
   
   return (
     <div className="items-center flex gap-0.5 flex-1 shrink basis-[0%] pr-0.5">
-      <div className="self-stretch flex flex-col items-center text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
+      <div className="self-stretch flex flex-col items-end text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
         {isCompleted ? (
           <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
             <Check className="w-3.5 h-3.5 text-white" />
