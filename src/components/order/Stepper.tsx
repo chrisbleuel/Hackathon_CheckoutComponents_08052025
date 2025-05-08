@@ -14,7 +14,7 @@ interface StepProps {
 
 const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrder, isDone, isFirst }) => {
   return (
-    <div className="flex flex-col items-center flex-1">
+    <div className="flex flex-col items-center">
       <div className="flex items-center w-full">
         {/* Left connector line */}
         {!isFirst && (
@@ -24,7 +24,7 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
         )}
         
         {/* Circle icon */}
-        <div className="flex-shrink-0">
+        <div className="relative flex-shrink-0">
           {isCompleted ? (
             <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
               <Check className="w-3.5 h-3.5 text-white" />
@@ -50,8 +50,8 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
         )}
       </div>
       
-      {/* Step label - centered under the dot */}
-      <div className="text-xs text-[#32373E] mt-1 text-center w-full">{label}</div>
+      {/* Step label - centered under the icon */}
+      <div className="text-xs text-[#32373E] mt-1 text-center">{label}</div>
     </div>
   );
 };
