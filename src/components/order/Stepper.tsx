@@ -13,46 +13,73 @@ interface StepProps {
 
 const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrder, isDone }) => {
   return (
-    <div className="items-center flex min-w-20 gap-0.5 flex-1 shrink basis-[0%] pr-0.5">
-      <div className="self-stretch flex flex-col items-center text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
-        {isCompleted ? (
-          <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
-            <Check className="w-3.5 h-3.5 text-white" />
+    <div className="flex flex-col items-center min-w-20 flex-1">
+      <div className="flex items-center w-full">
+        {/* Left connector line */}
+        {!isFirst && (
+          <div className="flex-1">
+            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
           </div>
-        ) : isOrder && isActive ? (
-          <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
-            <ShoppingBasket className="w-3 h-3 text-white" />
-          </div>
-        ) : isDone ? (
-          <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} flex items-center justify-center`}>
-            <Truck className="w-3 h-3 text-white" />
-          </div>
-        ) : (
-          <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
         )}
-        <div className="text-[#32373E] mt-1">{label}</div>
-      </div>
-      {!isLast && (
-        <div className="self-stretch min-w-20 flex-1 shrink basis-[0%] my-auto">
-          <div className={`flex shrink-0 h-0.5 ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+        
+        {/* Circle icon */}
+        <div className="flex-shrink-0">
+          {isCompleted ? (
+            <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
+              <Check className="w-3.5 h-3.5 text-white" />
+            </div>
+          ) : isOrder && isActive ? (
+            <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
+              <ShoppingBasket className="w-3 h-3 text-white" />
+            </div>
+          ) : isDone ? (
+            <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'} flex items-center justify-center`}>
+              <Truck className="w-3 h-3 text-white" />
+            </div>
+          ) : (
+            <div className={`w-5 h-5 rounded-full ${isActive ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+          )}
         </div>
-      )}
+        
+        {/* Right connector line */}
+        {!isLast && (
+          <div className="flex-1">
+            <div className={`h-0.5 w-full ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
+          </div>
+        )}
+      </div>
+      
+      {/* Step label */}
+      <div className="text-xs text-[#32373E] mt-1">{label}</div>
     </div>
   );
 };
 
 export const Stepper = () => {
+  const steps = [
+    { label: "Account", isCompleted: true, isActive: false, isFirst: true },
+    { label: "Address", isCompleted: true, isActive: false },
+    { label: "Prescription", isCompleted: true, isActive: false },
+    { label: "Order", isCompleted: false, isActive: true, isOrder: true },
+    { label: "Done", isCompleted: false, isActive: false, isLast: true, isDone: true }
+  ];
+  
   return (
     <div className="flex w-full justify-center">
       <div className="items-center flex w-full max-w-2xl">
-        <div className="self-stretch min-w-60 w-full flex-1 shrink basis-[0%] my-auto">
-          <div className="flex w-full gap-0.5 flex-wrap">
-            <Step label="Account" isCompleted={true} isActive={false} />
-            <Step label="Address" isCompleted={true} isActive={false} />
-            <Step label="Prescription" isCompleted={true} isActive={false} />
-            <Step label="Order" isCompleted={false} isActive={true} isOrder={true} />
-            <Step label="Done" isCompleted={false} isActive={false} isLast isDone={true} />
-          </div>
+        <div className="w-full flex">
+          {steps.map((step, index) => (
+            <Step 
+              key={index}
+              label={step.label}
+              isCompleted={step.isCompleted}
+              isActive={step.isActive}
+              isLast={step.isLast}
+              isOrder={step.isOrder}
+              isDone={step.isDone}
+              isFirst={step.isFirst}
+            />
+          ))}
         </div>
       </div>
     </div>
