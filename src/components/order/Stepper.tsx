@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Check, ShoppingBasket, Truck } from 'lucide-react';
+import { Check, ShoppingBasket, Truck, CreditCard } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface StepProps {
   label: string;
@@ -11,8 +12,10 @@ interface StepProps {
 }
 
 const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrder }) => {
+  const isMobile = useIsMobile();
+  
   return (
-    <div className="items-center flex min-w-20 gap-0.5 flex-1 shrink basis-[0%] pr-0.5">
+    <div className="items-center flex gap-0.5 flex-1 shrink basis-[0%] pr-0.5">
       <div className="self-stretch flex flex-col items-center text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
         {isCompleted ? (
           <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
@@ -27,10 +30,10 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
             {isActive && <Truck className="w-3 h-3 text-white" />}
           </div>
         )}
-        <div className="text-[#32373E] mt-1">{label}</div>
+        <div className={`text-[#32373E] mt-1 ${isMobile ? 'text-[10px]' : ''}`}>{isMobile && label.length > 6 ? label.substring(0, 6) : label}</div>
       </div>
       {!isLast && (
-        <div className="self-stretch min-w-20 flex-1 shrink basis-[0%] my-auto relative">
+        <div className={`self-stretch ${isMobile ? 'min-w-8' : 'min-w-20'} flex-1 shrink basis-[0%] my-auto relative`}>
           <div className={`absolute top-[-10px] w-full h-0.5 ${isCompleted ? 'bg-[#0072EF]' : 'bg-[#E6EBF0]'}`} />
         </div>
       )}
@@ -39,14 +42,16 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
 };
 
 export const Stepper = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="flex w-full justify-center">
       <div className="items-center flex w-full max-w-2xl">
-        <div className="self-stretch min-w-60 w-full flex-1 shrink basis-[0%] my-auto">
+        <div className="self-stretch w-full flex-1 shrink basis-[0%] my-auto">
           <div className="flex w-full gap-0.5 flex-wrap">
             <Step label="Account" isCompleted={true} isActive={false} />
-            <Step label="Address" isCompleted={true} isActive={false} />
-            <Step label="Prescription" isCompleted={true} isActive={false} />
+            <Step label={isMobile ? "Addr" : "Address"} isCompleted={true} isActive={false} />
+            <Step label={isMobile ? "Presc" : "Prescription"} isCompleted={true} isActive={false} />
             <Step label="Order" isCompleted={false} isActive={true} isOrder={true} />
             <Step label="Done" isCompleted={false} isActive={false} isLast />
           </div>
