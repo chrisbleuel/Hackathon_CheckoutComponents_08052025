@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const PaymentLogo = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="justify-center items-center aspect-[29/18] border border-[#E6EBF0] flex min-h-9 gap-2 overflow-hidden grow shrink w-[46px] bg-white p-2 rounded-[3px]">
-    <img src={src} alt={alt} className="object-contain" />
+  <div className="justify-center items-center flex w-12 h-8 border border-[#E6EBF0] bg-white p-2 rounded-[3px]">
+    <img src={src} alt={alt} className="object-contain max-w-full max-h-full" />
   </div>
 );
 
