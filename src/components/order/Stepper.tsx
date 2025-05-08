@@ -14,7 +14,7 @@ interface StepProps {
 
 const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrder, isDone, isFirst }) => {
   return (
-    <div className="flex flex-col items-center min-w-20 flex-1">
+    <div className="flex flex-col items-center flex-1">
       <div className="flex items-center w-full">
         {/* Left connector line */}
         {!isFirst && (
@@ -67,7 +67,7 @@ export const Stepper = () => {
   
   return (
     <div className="flex w-full">
-      <div className="flex w-full">
+      <div className="flex w-full justify-between">
         {steps.map((step, index) => (
           <Step 
             key={index}
