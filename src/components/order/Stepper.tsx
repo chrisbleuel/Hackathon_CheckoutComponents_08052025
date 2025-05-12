@@ -62,7 +62,9 @@ export const Stepper = () => {
   return (
     <div className="flex w-full justify-center px-4 max-w-[1440px] mx-auto">
       <div className="items-center flex w-full">
-        <div className="self-stretch w-full flex-1 shrink basis-[0%] my-auto">
+        <div className="self-stretch w-full flex-1 shrink basis-[0%] my-auto relative">
+          {/* Added gray line inside the container */}
+          <div className="absolute top-0 left-0 right-0 w-full h-0.5 bg-gray-200 mb-4"></div>
           <div className="flex w-full gap-0.5 flex-wrap">
             <Step label="Account" isCompleted={true} isActive={false} />
             <Step label={isMobile ? "Addr" : "Address"} isCompleted={true} isActive={false} />
