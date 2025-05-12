@@ -17,7 +17,7 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
   return (
     <div className={`items-center flex gap-0.5 flex-1 shrink basis-[0%] pr-0.5 ${isLast ? 'justify-end' : ''}`}>
       {!isLast && (
-        <div className="self-stretch flex flex-col items-end text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
+        <div className="self-stretch flex flex-col items-center text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
           {isCompleted ? (
             <div className="w-5 h-5 rounded-full bg-[#0072EF] flex items-center justify-center">
               <Check className="w-3.5 h-3.5 text-white" />
@@ -31,7 +31,7 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
               {isActive && <Truck className="w-3.5 h-3.5 text-white" strokeWidth={3} />}
             </div>
           )}
-          <div className={`text-[#32373E] mt-1 ${isMobile ? 'text-[10px]' : ''}`}>{isMobile && label.length > 6 ? label.substring(0, 6) : label}</div>
+          <div className={`text-[#32373E] mt-1 text-center ${isMobile ? 'text-[10px]' : ''}`}>{isMobile && label.length > 6 ? label.substring(0, 6) : label}</div>
         </div>
       )}
       
@@ -46,9 +46,9 @@ const Step: React.FC<StepProps> = ({ label, isCompleted, isActive, isLast, isOrd
           <div className="self-stretch relative mr-3">
             <div className="absolute top-[-10px] right-0 w-full h-0.5 bg-[#E6EBF0]" />
           </div>
-          <div className="flex flex-col items-start text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
+          <div className="flex flex-col items-center text-xs text-[#32373E] font-normal whitespace-nowrap text-center tracking-[0.06px] w-5 my-auto">
             <div className="w-5 h-5 rounded-full bg-[#E6EBF0] flex items-center justify-center" />
-            <div className={`text-[#32373E] mt-1 ${isMobile ? 'text-[10px]' : ''}`}>{isMobile && label.length > 6 ? label.substring(0, 6) : 'Done'}</div>
+            <div className={`text-[#32373E] mt-1 text-center ${isMobile ? 'text-[10px]' : ''}`}>{isMobile && label.length > 6 ? label.substring(0, 6) : 'Done'}</div>
           </div>
         </div>
       )}
