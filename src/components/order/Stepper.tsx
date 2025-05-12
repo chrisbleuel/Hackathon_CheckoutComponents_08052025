@@ -45,15 +45,33 @@ export const Stepper = () => {
   const isMobile = useIsMobile();
   
   return (
-    <div className="flex w-full justify-center px-4 max-w-[1440px] mx-auto">
-      <div className="items-center flex w-full">
-        <div className="self-stretch w-full flex-1 shrink basis-[0%] my-auto">
-          <div className="flex w-full gap-0.5 flex-wrap">
-            <Step label="Account" isCompleted={true} isActive={false} />
-            <Step label={isMobile ? "Addr" : "Address"} isCompleted={true} isActive={false} />
-            <Step label={isMobile ? "Presc" : "Prescription"} isCompleted={true} isActive={false} />
-            <Step label="Order" isCompleted={false} isActive={true} isOrder={true} />
-            <Step label="Done" isCompleted={false} isActive={false} isLast />
+    <div className="flex flex-col gap-4 w-full">
+      {/* Duplicate container placed above the original */}
+      <div className="flex w-full justify-center px-4 max-w-[1440px] mx-auto">
+        <div className="items-center flex w-full">
+          <div className="self-stretch w-full flex-1 shrink basis-[0%] my-auto">
+            <div className="flex w-full gap-0.5 flex-wrap">
+              <Step label="Account" isCompleted={true} isActive={false} />
+              <Step label={isMobile ? "Addr" : "Address"} isCompleted={true} isActive={false} />
+              <Step label={isMobile ? "Presc" : "Prescription"} isCompleted={true} isActive={false} />
+              <Step label="Order" isCompleted={false} isActive={true} isOrder={true} />
+              <Step label="Done" isCompleted={false} isActive={false} isLast />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Original container */}
+      <div className="flex w-full justify-center px-4 max-w-[1440px] mx-auto">
+        <div className="items-center flex w-full">
+          <div className="self-stretch w-full flex-1 shrink basis-[0%] my-auto">
+            <div className="flex w-full gap-0.5 flex-wrap">
+              <Step label="Account" isCompleted={true} isActive={false} />
+              <Step label={isMobile ? "Addr" : "Address"} isCompleted={true} isActive={false} />
+              <Step label={isMobile ? "Presc" : "Prescription"} isCompleted={true} isActive={false} />
+              <Step label="Order" isCompleted={false} isActive={true} isOrder={true} />
+              <Step label="Done" isCompleted={false} isActive={false} isLast />
+            </div>
           </div>
         </div>
       </div>
